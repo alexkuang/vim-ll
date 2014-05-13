@@ -8,4 +8,5 @@ Run with `python -m SimpleHTTPServer`
 - Finish most important part of presentation--Vim's grammar, `action-motion-object`
 - demo text files
 - Mention "unix as an ide" concept, comparison with traditional ides
-- Misc cool demo ideas
+- Misc cool demo ideas:
+    - :h filter / :h ! (a la acme) (/ expression register?)
