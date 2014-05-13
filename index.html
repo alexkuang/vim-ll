@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Vim Crash Course</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+        <section>
+            <h1>vim</h1>
+            <h3>The crash course</h3>
+        </section>
+
+        <section>
+            <h2>Goal</h2>
+            <p>Change the way you think about text editing, and get you to at least try vim out.</p>
+            <ul>
+                <li class="fragment">Show the power of "stock" vim, even without plugins/etc</li>
+                <li class="fragment">Explain the "vim way" and some core concepts</li>
+                <li class="fragment">Give a good foundation for further exploration</li>
+                <li class="fragment">Be interactive to cut down boredom</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>What is vim?</h2>
+            <ul>
+                <li><q>"That weird editor where you have to press i just to insert text."</q></li>
+                <li><q>"What you use while stuck ssh-ing into a server, but nano is for scrubs"</q></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Reasons to use vim</h2>
+            <ul>
+                <li class="fragment">It's not notepad--Less mouse, more crack.</li>
+                <li class="fragment">
+                    Less risk of RSI than emacs<super>*</super><br><img src="http://i.imgur.com/yM8aRp1.jpg">
+                    <br>
+                    <p class="fragment"><small>* I am not a doctor</small></p>
+                </li>
+                <li class="fragment">Cross-[language|workflow|platform]</li>
+                <li class="fragment">Look like a wizard in coffee shops</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Reasons to not use vim</h2>
+            <ul>
+                <li class="fragment">Not easily extensible<super>*</super><br><p class="fragment"><small>* But vim devs are very persistent--masochistic, even</small></p></li>
+                <li class="fragment">No seriously, vimscript sucks</li>
+                <li class="fragment">Not useful to those locked into e.g. VS/Eclipse</li>
+                <li class="fragment">It's not notepad</li>
+            </ul>
+            <br />
+            <br />
+        </section>
+
+
+
+        <section>
+            <h1>Core vim concepts</h1>
+        </section>
+
+        <section>
+            <h2>Philosophy</h2>
+            <p class="fragment">Very much unix-inspired: Small <em><strong>composable</strong></em> units for <em><strong>specific tasks</strong></em>, and the
+                <em><strong>interface between them should be text</strong></em>.</p>
+            <br><br>
+            <p class="fragment">This is key to why vim is so awesome at text editing but so terrible at everything else.</p>
+        </section>
+
+        <section>
+            <h2>Vim is MODAL</h2>
+            <ul>
+                <li class="fragment">Key functions change depending on mode</li>
+                <li class="fragment">Coders don't spend all their time inserting text, why optimize solely for that?</li>
+                <li class="fragment">4 pseudo- "mode groups" to know:
+                  <ul>
+                      <li class="fragment">Normal mode: Default mode, operate on text.  Delete, cut, paste, indent, etc.</li>
+                      <li class="fragment">Insert mode: Self-explanatory</li>
+                      <li class="fragment">Visual mode: Kind of like highlighting with the mouse</li>
+                      <li class="fragment">Ex mode: Like the command line.  <code>:w</code>, <code>:q</code>, <code>:s/foo/bar</code>, etc.</li>
+                  </ul>
+                </li>
+                <li class="fragment">(Demo)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Vim's "grammar"</h2>
+        </section>
+
+        <section>
+            <h2>Vim's "grammar" (cont'd)</h2>
+        </section>
+
+        <section>
+            <h2>DRY</h2>
+            <p class="fragment">In keeping with vim's focus on precision + efficiency...  REPEAT COMMANDS FOR EVERYONE!</p>
+            <ul class="fragment">
+                <li><code>.</code> repeats last "operation"</li>
+                <li><code>;</code> repeats last <code>f[char]</code></li>
+                <li><code>n</code> repeats last <code>/search</code></li>
+                <li><code>&</code> repeats last <code>:s/search/replace</code></li>
+                <li>etc</li>
+            </ul>
+            <p class="fragment">(demo)</p>
+        </section>
+
+
+
+        <section>
+            <h1>Learning Vim</h1>
+        </section>
+
+        <section>
+            <h2>Getting Started</h2>
+            <ul>
+                <li class="fragment">Go vim or go home--Give it a real chance!</li>
+                <li class="fragment">Grab a sensible (but not HUGE) vimrc template</li>
+                <li class="fragment">Remap <code>caps</code> to <code>ctrl</code></li>
+                <li class="fragment">Remap your <code>ESC</code>--<code>jj</code> and <code>jk</code> are popular</li>
+            </ul>
+            <br><br>
+            <p class="fragment">Common wisdom: disable arrows in favor of <code>hjkl</code>, eschew use of the mouse,
+            etc... <span class="fragment">IMO only if you're really masochistic.</span></p>
+        </section>
+
+        <section>
+            <h2>Improving</h2>
+            <ul>
+                <li class="fragment">One step at a time: learning everything at once is impossible and silly</li>
+                <li class="fragment"><code>vimtutor</code></li>
+                <li class="fragment"><code>:h</code>--<code>motion.txt</code>, <code>modes-intro</code>, TODO</li>
+                <li class="fragment">Watch the wizards for inspiration:
+                    <ul>
+                        <li>Derek Wyatt - http://derekwyatt.org/</li>
+                        <li>Drew Neil - http://vimcasts.org/</li>
+                        <li>Gary Bernhardt - ??? (all over the place)</li>
+                    </ul>
+                </li>
+                <li class="fragment">Above all...  Practice! (See first bullet)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>For non-vim users</h2>
+            <small>(Yes, emacs folks, I'm talking to you...)</small>
+            <br><br>
+            <p class="fragment">"Vim nature": injecting a vim-like philosophy/interface to other programs.  It's
+                becoming more and more common as people catch on to the awesomeness of vim.</p>
+            <br><br>
+            <ul class="fragment">
+                <li>emacs: evil mode</li>
+                <li>sublime: vintage mode</li>
+                <li>eclipse: vrapper</li>
+                <li><code>set editing-mode vi</code> in <code>~/.inputrc</code>... or <code>set -o vi</code></li>
+                <li>Firefox: vimperator, pentadactyl</li>
+            </ul>
+        </section>
+
+        <section>
+            <h1>Misc Cool Stuff</h1>
+        </section>
+
+        <section>
+            <h2>Plugins <small class="fragment">(OK, so I lied...)</small></h2>
+            <ul class="fragment">
+                <li>Use pathogen!! (or vundle)</li>
+                <li>ctrl-p</li>
+                <li>rainbow-parens</li>
+                <li>dispatch</li>
+                <li>(Basically anything Tim Pope)</li>
+            </ul>
+            <p class="fragment">(demo)</p>
+        </section>
+
+
+
+        <section>
+            <h1>Thanks!</h1>
+        </section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
