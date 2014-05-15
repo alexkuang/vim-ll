@@ -154,7 +154,8 @@
         <section>
             <h2>Combining everything</h2>
             <p>The <em>real</em> power comes from combining these precise movements + selections with operators like
-            delete, copy, etc.</p>
+            delete, copy, etc, to create flexible "operations" on your text.</p>
+            <p>And even better, vim gives you the <code>.</code> command to repeat operations!</p>
             <p class="fragment">(demo - operator-motion-object)</p>
         </section>
 
@@ -167,19 +168,6 @@
                 the "sentences" you can compose</li>
                 <li class="fragment">You can actually define your own motions/objects (e.g., ruby block) or operators (e.g.,
                 vim-surround)!</li>
-            </ul>
-        </section>
-
-        <!-- Hmm, this section seems to stick out too much... -->
-        <section>
-            <h2>DRY</h2>
-            <p class="fragment">In keeping with vim's focus on precision + efficiency...  REPEAT COMMANDS FOR EVERYONE!</p>
-            <ul class="fragment">
-                <li><code>.</code> repeats last "operation"</li>
-                <li><code>;</code> repeats last <code>f[char]</code></li>
-                <li><code>n</code> repeats last <code>/search</code></li>
-                <li><code>&amp;</code> repeats last <code>:s/search/replace</code></li>
-                <li>etc</li>
             </ul>
         </section>
 
