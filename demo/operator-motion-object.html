@@ -1,0 +1,28 @@
+<!--
+  Now for a demo using (IMO) one of the most PITA languages to edit, HTML!
+  
+  Suppose you are a 1337 hacker charged with defacing the site of a 90s-style shopping portal.  You come across the
+  following monstrosity of HTML, and you wish to:
+    - Properly indent it; you're a hacker, not a barbarian
+    - Change the id of the div to "inventory-old
+    - Change the classes of each li to "bar" to mess up their styling
+    - Upcase all the individual items
+
+  A good way to accomplish this would be:
+    - `=G` to format to end of file
+    - Go to the inventory line, `f"ci"inventory-old`
+    - Go to li line, `f"ci"bar<ESC>j.j.j.` (etc)
+    - Go back to first li line, `fIgUitj.j.j.` (etc)
+
+  Another tedious task, made easier by vim!  Now you can go back to hanging around on IRC and playing LoL.
+-->
+<div id="inventory">
+<ul>
+<li class="bar">Item 1</li>
+<li class="foo">Item 2</li>
+<li class="foo">Item 3</li>
+<li class="foo">Item 4</li>
+<li class="foo">Item 5</li>
+<li class="foo">Item 6</li>
+</ul>
+</div>
