@@ -5,11 +5,13 @@
 //   - `w`, wordwise movement, would get you there in ~9 keystrokes
 //   - `W`, WORDwise, in 8
 //   - `fd`, in 2.  :)
+//   - `tdl`, if you're feeling quirky...
 "The quick brown fox jumps over the lazy dog."
 
 // Some quick visual mode selections for demonstration:
+//  - `viw`
 //  - `vi"`
+//  - `va"`
 //  - `vi(`
-//  - `vi`
 //  - `vt,`
 println("The quick, brown fox jumps over the lazy dog")

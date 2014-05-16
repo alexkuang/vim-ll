@@ -50,6 +50,7 @@
         <section>
             <h2>Goal</h2>
             <p>Change the way you think about text editing, and spread the gospel of vim.</p>
+            <p><small>(For the more experienced, maybe a fresh perspective / new fun fact?)</small></p>
             <br><br>
             <ul>
                 <li class="fragment">Show the power of "vanilla" vim--No crazy plugins, no "obscure tips"</li>
@@ -88,6 +89,7 @@
                 <li class="fragment">No seriously, vimscript sucks</li>
                 <li class="fragment">Not useful to those locked into existing IDEs</li>
                 <li class="fragment">It's not notepad (or TextMate, or Eclipse...)</li>
+                <li class="fragment">HOWEVER, "vim-like" interfaces available for other apps...</li>
             </ul>
             <br />
             <br />
@@ -110,8 +112,8 @@
         <section>
             <h2>Vim is MODAL</h2>
             <ul>
-                <li class="fragment">Key functions change depending on mode</li>
-                <li class="fragment">Coders don't spend all their time inserting text, why optimize solely for that?</li>
+                <li class="fragment">Yes, key functions change depending on mode</li>
+                <li class="fragment">Coders (or even just writers) don't spend all their time inserting text, why optimize solely for that?</li>
                 <li class="fragment">4 pseudo- "mode groups" to know:
                   <ul>
                       <li class="fragment">Normal mode: Primary mode, operate on text.  Delete, cut, paste, indent, etc.</li>
@@ -141,7 +143,7 @@
 
         <section>
             <h2>Object selections</h2>
-            <p>Combine movements with text objects for <em>precise selections</em>
+            <p>Vim has built-in notions of "words", "sentences", etc.  Combine with movements for <em>precise selections</em>
                 <ul class="fragment">
                     <li>iw - "inside word"</li>
                     <li>aw - "around word"</li>
@@ -163,9 +165,11 @@
         <section>
             <h2>Why this is life-changing</h2>
             <ul>
+                <li class="fragment">It's a language for describing what you want to do to your text; think: "change
+                between quotes", "delete 3 words", etc</li>
                 <li class="fragment">Way better than playing "hunt with mouse" or "hold down your arrow key"</li>
-                <li class="fragment">It's a language for describing what you want to do to your text</li>
-                <li class="fragment">Like every language, learning a new "term" (new operator, new text object) dramatically increases
+                <li class="fragment">(IMO), less chance of breaking flow</li>
+                <li class="fragment">Learning a new "term" (new operator, new text object) dramatically increases
                 the "sentences" you can compose</li>
                 <li class="fragment">You can actually define your own motions/objects (e.g., ruby block) or operators (e.g.,
                 vim-surround)!</li>
@@ -216,7 +220,7 @@
                 becoming more and more common as people catch on to the awesomeness of vim.</p>
             <br><br>
             <ul class="fragment">
-                <li>emacs: evil mode</li>
+                <li>emacs: evil mode - Oddly enough, best received of all...</li>
                 <li>sublime: vintage mode</li>
                 <li>eclipse: vrapper</li>
                 <li><code>set editing-mode vi</code> in <code>~/.inputrc</code>... or <code>set -o vi</code></li>
@@ -234,8 +238,8 @@
             <ul class="fragment">
                 <li>Use pathogen!! (or vundle)</li>
                 <li>ctrl-p</li>
-                <li>rainbow-parens</li>
                 <li>dispatch</li>
+                <li>vim-surround</li>
                 <li>(Basically anything Tim Pope)</li>
             </ul>
             <p class="fragment">(demo - no file, just plugins)</p>
