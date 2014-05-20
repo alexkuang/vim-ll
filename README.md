@@ -14,7 +14,8 @@ Alternately, some trailing branch of master will be running off github pages at:
 
 It's really silly (and kind of futile) to give a live talk about vim and _not_ do any demos.  I'll try to make the demo
 files as free-standing as possible and annotate the keys I plan on using with `code backticks`, but no promises, since
-this _is_ a live presentation...  Nevertheless, all pertinent files will be in the demos folder in the project.
+this _is_ a live presentation...  Nevertheless, all pertinent files will be in the demos folder in the project.  Moments
+where I plan on jumping from the slides to a demo will be denoted in code-style text highlighted in red.
 
 ### Lunch 'n Learn?
 
