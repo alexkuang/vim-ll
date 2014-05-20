@@ -1,0 +1,27 @@
+" Doesn't do much in modern vim, but...
+" See http://stackoverflow.com/questions/5845557/in-a-vimrc-is-set-nocompatible-completely-useless
+set nocompatible
+
+" autocmds are basically vim's triggers: stuff to run onread, onwrite, etc.  Generally you want a blank slate so you can
+" have free working space to define your own
+autocmd!
+
+" highlight stuff matching last searched term
+set hlsearch
+" use case-insensitive unless mixed case search term
+set smartcase
+" jump to next matching on every keystroke for searching
+set incsearch
+
+" Check out the :h for each of these options!  However, 4-space expand tab is a pretty good default.  ;)
+" Also useful, http://tedlogan.com/techblog3.html
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
+" Vim built-in lang indent, syntax, etc on
+syntax enable
+filetype on
+filetype indent on
+filetype plugin on
