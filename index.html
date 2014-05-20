@@ -120,7 +120,8 @@
                 <li class="fragment">Coders (or even just writers) don't spend all their time inserting text, why optimize solely for that?</li>
                 <li class="fragment">4 pseudo- "mode groups" to know:
                   <ul>
-                      <li class="fragment">Normal mode: Primary mode, operate on text.  Delete, cut, paste, indent, etc.</li>
+                      <li class="fragment">Normal mode: Primary mode, operate on text.  Delete, cut, paste, indent, etc.
+                      This is the mode you will be spending the most time in.</li>
                       <li class="fragment">Insert mode: Self-explanatory</li>
                       <li class="fragment">Visual mode: Kind of like highlighting with the mouse</li>
                       <li class="fragment">Ex mode: Like the command line.  <code>:w</code>, <code>:q</code>, <code>:s/foo/bar</code>, etc.</li>
@@ -134,24 +135,27 @@
             <h2>So what?</h2>
             <p class="fragment">In normal mode, vim has a glut of <strong><em>motions</em></strong> and <strong><em>text objects</em></strong> that let you tell it what you want.</p>
             <p class="fragment">This is makes playing "hold down arrow keys" and "hunt with mouse" <em>kind of a joke</em>.</p>
-            <div class="fragment"><p>Some example motions: </p>
-                <ul>
-                    <li><code class="fragment highlight-green">w</code> - forward to next word</li>
-                    <li><code class="fragment highlight-green">e</code> - forward to end of word</li>
-                    <li><code class="fragment highlight-green">0</code> - first character of line</li>
-                    <li><code class="fragment highlight-green">fc</code> - forward to next occurrence of c</li>
-                    <li><code class="fragment highlight-green">tc</code> - forward 'til next occurence of c</li>
-                </ul>
-            </div>
         </section>
 
         <section>
-            <h2>Object selections</h2>
-            <p>Vim also has built-in notions of "words", "sentences", etc.  Combine with movements for <em>precise selections</em>
+            <h2><span style="color:#17ff2e">Motions</span> and Text Objects</h2>
+            <p>Motions let you jump efficiently around in text.  Some examples:</p>
+            <ul class="fragment">
+                <li><code class="fragment highlight-green">w</code> - forward to next word</li>
+                <li><code class="fragment highlight-green">e</code> - forward to end of word</li>
+                <li><code class="fragment highlight-green">0</code> - first character of line</li>
+                <li><code class="fragment highlight-green">fc</code> - forward to next occurrence of c</li>
+                <li><code class="fragment highlight-green">tc</code> - forward 'til next occurence of c</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Motions and <span style="color:#17ff2e">Text Objects</span></h2>
+            <p>Vim also has built-in objects for "words", "sentences", etc.  This allows for <em>precise selections</em>
                 <ul class="fragment">
-                    <li><code class="fragment highlight-green">iw</code> - "inside word"</li>
-                    <li><code class="fragment highlight-green">aw</code> - "around word"</li>
-                    <li><code class="fragment highlight-green">i(</code> - "inside parentheses"</li>
+                    <li><code class="fragment highlight-green">iw</code> - "inside <span class="fragment highlight-blue">word</span>"</li>
+                    <li><code class="fragment highlight-green">i(</code> - (<span class="fragment highlight-blue">inside parentheses</span>)</li>
+                    <li><code class="fragment highlight-green">a(</code> - <span class="fragment highlight-blue">(around parentheses)</span></li>
                     <li>(other objects: sentences, paragraphs, {, etc...)</li>
                 </ul>
             </p>
@@ -160,9 +164,9 @@
 
         <section>
             <h2>Combining everything</h2>
-            <p class="fragment">The <em>real</em> power comes from combining these precise movements + selections with operators like
-            delete, copy, etc, to create flexible "operations" on your text.</p>
-            <p class="fragment">And even better, vim gives you the <code>.</code> command to repeat operations!</p>
+            <p class="fragment">Vim's killer feature is composing these efficient movements + selections with operators like
+            delete/copy/etc, to create flexible + precise "operations" on your text.</p>
+            <p class="fragment">DRY--vim gives you the <code>.</code> command to repeat operations!</p>
             <p class="fragment">(demo - operator-motion-object)</p>
         </section>
 
@@ -175,10 +179,10 @@
                     style="color:#17ff2e">3</span> <span style="color:#17ff2e">w</span>ords", "<span
                     style="color:#17ff2e">d</span>elete <span style="color:#17ff2e">i</span>nside <span
                     style="color:#17ff2e">{</span>", etc</li>
-                <li class="fragment">Efficiency in actions + more natural "thinking terms" = less chance of breaking flow (IMO)</li>
-                <li class="fragment">Learning a new "term" dramatically increases the "sentences" you can compose</li>
-                <li class="fragment">You can define your own motions/objects (e.g., ruby block) or operators (e.g.,
-                vim-surround)!</li>
+                <li class="fragment">Efficiency in actions + more natural "way of thinking" = less chance of breaking flow (IMO)</li>
+                <li class="fragment">Learning a new operation/motion/text object dramatically increases the "commands"
+                you know since it's all composable!</li>
+                <li class="fragment">You can define your own motions/objects (e.g., ruby block) or operators (e.g., vim-surround)!</li>
             </ul>
         </section>
 
@@ -189,12 +193,12 @@
         </section>
 
         <section>
-            <h2>Getting Started</h2>
+            <h2>Adopting vim</h2>
             <ul>
                 <li class="fragment">Go vim or go home--Give it a real chance!</li>
                 <li class="fragment">There are some easy things to make the transition smoother...</li>
-                <li class="fragment">Grab a sensible (but not HUGE) vimrc template (See <code>example_vimrc</code> in project)</li>
-                <li class="fragment">Remap keys: <code>caps</code>-&gt;<code>ctrl</code>, and <code>ESC</code>-&gt;<code>jj</code> and <code>jk</code> are popular</li>
+                <li class="fragment">Grab a sensible (but not HUGE) vimrc template (See <code>example_vimrc</code> in
+                project) to configure the editor</li>
             </ul>
             <br><br>
             <p class="fragment">Common wisdom: disable arrows in favor of <code>hjkl</code>, eschew use of the mouse,
@@ -205,15 +209,11 @@
             <h2>Improving</h2>
             <ul>
                 <li class="fragment">One step at a time! Memorizing everything at once is impossible.  Pick one thing, practice for a while, repeat.</li>
-                <li class="fragment">Learn to "parse" long commands into their components, ex: <code>ggVGy -&gt; gg, V, G, y</code></li>
-                <li class="fragment">vim's <code>:h</code> is awesome! <code>motion.txt</code>, <code>modes-intro</code>, etc.</li>
-                <li class="fragment">Watch the wizards for inspiration when feeling "stuck":
-                    <ul>
-                        <li>Derek Wyatt - http://derekwyatt.org/</li>
-                        <li>Drew Neil - http://vimcasts.org/</li>
-                        <li>Gary Bernhardt - ??? (all over the place)</li>
-                    </ul>
-                </li>
+                <li class="fragment">When in doubt, notice what requires a lot of repetitive keystrokes, and find out
+                how to make that faster.</li>
+                <li class="fragment">Don't just repeat long commands; break them down and learn about their components. ex: <code>ggVGy -&gt; gg, V, G, y</code></li>
+                <li class="fragment">vim's <code>:h</code>(elp) is awesome. You can look just about anything up:
+                <code>:h d</code>, <code>:h motion.txt</code>, <code>:h modes-intro</code>, etc.</li>
                 <li class="fragment">But seriously...  Practice! (See first bullet)</li>
             </ul>
         </section>
