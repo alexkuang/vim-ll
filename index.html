@@ -165,8 +165,8 @@
         <section>
             <h2>Combining everything</h2>
             <p class="fragment">Vim's killer feature is composing these efficient movements + selections with operators like
-            delete/copy/etc, to create flexible + precise "operations" on your text.</p>
-            <p class="fragment">DRY--vim gives you the <code>.</code> command to repeat operations!</p>
+            delete/copy/etc, to create flexible + precise "commands" to run on your text.</p>
+            <p class="fragment">DRY--vim gives you the <code>.</code> command to repeat commands!</p>
             <p class="fragment">(cue demo - file: operator-motion-object.html)</p>
         </section>
 
@@ -180,8 +180,8 @@
                     style="color:#17ff2e">d</span>elete <span style="color:#17ff2e">i</span>nside <span
                     style="color:#17ff2e">{</span>", etc</li>
                 <li class="fragment">Efficiency in actions + more natural "way of thinking" = less chance of breaking flow (IMO)</li>
-                <li class="fragment">Learning a new operation/motion/text object dramatically increases the "commands"
-                you know since it's all composable!</li>
+                <li class="fragment">Each new operation/motion/text object dramatically increases the "commands" you
+                know since it's all composable!</li>
                 <li class="fragment">You can define your own motions/objects (e.g., ruby block) or operators (e.g., vim-surround)!</li>
             </ul>
         </section>
@@ -196,32 +196,31 @@
             <h2>Adopting vim</h2>
             <ul>
                 <li class="fragment">Go vim or go home--Give it a real chance!</li>
-                <li class="fragment">There are some easy things to make the transition smoother...</li>
                 <li class="fragment">Grab a sensible (but not HUGE) vimrc template (See <code>example_vimrc</code> in
-                project) to configure the editor</li>
+                project) to configure the editor.</li>
+                <li class="fragment">vim's <code>:h</code>(elp) is awesome. You can look just about anything up:
+                <code>:h d</code>, <code>:h motion.txt</code>, <code>:h modes-intro</code>, etc.</li>
             </ul>
             <br><br>
             <p class="fragment">Common wisdom: disable arrows in favor of <code>hjkl</code>, eschew use of the mouse,
-            etc... <span class="fragment">IMO only if you're really masochistic.</span></p>
+            etc... <span class="fragment">IMO only if you're really masochistic.</span> <span class="fragment">Get
+                back to "pre-vim" productivity, then <strong>exceed it</strong>...  Shouldn't take long.
+            ;)</span></p>
         </section>
 
         <section>
             <h2>Improving</h2>
             <ul>
-                <li class="fragment">One step at a time! Memorizing everything at once is impossible.  Pick one thing, practice for a while, repeat.</li>
-                <li class="fragment">When in doubt, notice what requires a lot of repetitive keystrokes, and find out
-                how to make that faster.</li>
+                <li class="fragment">One step at a time! Pick one thing, practice for a while, repeat.</li>
+                <li class="fragment">Rote memorization of keys is generally not productive.  Way more effective: notice what
+                requires a lot of repetitive keystrokes, and find out how to make that faster.</li>
                 <li class="fragment">Don't just repeat long commands; break them down and learn about their components. ex: <code>ggVGy -&gt; gg, V, G, y</code></li>
-                <li class="fragment">vim's <code>:h</code>(elp) is awesome. You can look just about anything up:
-                <code>:h d</code>, <code>:h motion.txt</code>, <code>:h modes-intro</code>, etc.</li>
-                <li class="fragment">But seriously...  Practice! (See first bullet)</li>
+                <li class="fragment">But seriously, practice!  (See first bullet point)</li>
             </ul>
         </section>
 
         <section>
             <h2>For non-vim users</h2>
-            <small>(Yes, emacs folks, I'm talking to you...)</small>
-            <br><br>
             <p class="fragment">"Vim nature": injecting a vim-like philosophy/interface to other programs.  It's
                 becoming more and more common as people catch on to the awesomeness of vim.</p>
             <br><br>
