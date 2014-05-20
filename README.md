@@ -8,7 +8,7 @@ Still very much WIP, take it with a grain of salt.
 
 To run locally, use `python -m SimpleHTTPServer` then hit up `localhost:8000` for the crazy reveal.js magic.
 
-Alternately, some trailing branch of master will be running off github pages at: alexkuang.com/vim-ll
+Alternately, some trailing branch of master will be running off github pages at: http://alexkuang.com/vim-ll
 
 ### Demos
 
