@@ -57,6 +57,7 @@
                 <li class="fragment">Explain the "vim way" and some core concepts</li>
                 <li class="fragment">Give a good foundation for further exploration</li>
                 <li class="fragment">Be interactive to cut down boredom</li>
+                <li class="fragment">Not a "gentle walk through vim"--Read a README on your own time.  :)</li>
             </ul>
         </section>
 
@@ -85,9 +86,12 @@
         <section>
             <h2>Reasons to not use vim</h2>
             <ul>
-                <li class="fragment">Not easily extensible<super>*</super><br><p class="fragment"><small>* But vim devs are very persistent--stubborn, even</small></p></li>
-                <li class="fragment">No seriously, vimscript sucks</li>
-                <li class="fragment">Not useful to those locked into existing IDEs</li>
+                <li class="fragment">
+                    Not easily extensible<super>*</super><br>
+                    <p><small class="fragment">* Seriously though, vimscript sucks</small><br />
+                    <small class="fragment">* Good thing vim devs are very persistent--stubborn, even</small></p>
+                </li>
+                <li class="fragment">Not as useful to those OK with one IDE/tech stack/etc</li>
                 <li class="fragment">It's not notepad (or TextMate, or Eclipse...)</li>
                 <li class="fragment">HOWEVER, "vim-like" interfaces available for other apps...</li>
             </ul>
@@ -129,14 +133,14 @@
         <section>
             <h2>So what?</h2>
             <p class="fragment">In normal mode, vim has a glut of <strong><em>motions</em></strong> and <strong><em>text objects</em></strong> that let you tell it what you want.</p>
-            <p class="fragment">This is makes the arrow keys + mouse look like a <em>joke</em>.</p>
+            <p class="fragment">This is makes playing "hold down arrow keys" and "hunt with mouse" a <em>joke</em>.</p>
             <p class="fragment">Some example motions: 
                 <ul class="fragment">
-                    <li><code>w</code> - forward to next word</li>
-                    <li><code>e</code> - forward to end of word</li>
-                    <li><code>0</code> - first character of line</li>
-                    <li><code>fc</code> - forward to next occurrence of c</li>
-                    <li><code>tc</code> - forward 'til next occurence of c</li>
+                    <li><code class="fragment highlight-green">w</code> - forward to next word</li>
+                    <li><code class="fragment highlight-green">e</code> - forward to end of word</li>
+                    <li><code class="fragment highlight-green">0</code> - first character of line</li>
+                    <li><code class="fragment highlight-green">fc</code> - forward to next occurrence of c</li>
+                    <li><code class="fragment highlight-green">tc</code> - forward 'til next occurence of c</li>
                 </ul>
             </p>
         </section>
@@ -145,9 +149,9 @@
             <h2>Object selections</h2>
             <p>Vim has built-in notions of "words", "sentences", etc.  Combine with movements for <em>precise selections</em>
                 <ul class="fragment">
-                    <li>iw - "inside word"</li>
-                    <li>aw - "around word"</li>
-                    <li>i( - "inside parentheses"</li>
+                    <li><code class="fragment highlight-green">iw</code> - "inside word"</li>
+                    <li><code class="fragment highlight-green">aw</code> - "around word"</li>
+                    <li><code class="fragment highlight-green">i(</code> - "inside parentheses"</li>
                     <li>(other objects: sentences, paragraphs, {, etc...)</li>
                 </ul>
             </p>
@@ -165,13 +169,15 @@
         <section>
             <h2>Why this is life-changing</h2>
             <ul>
-                <li class="fragment">It's a language for describing what you want to do to your text; think: "change
-                between quotes", "delete 3 words", etc</li>
-                <li class="fragment">Way better than playing "hunt with mouse" or "hold down your arrow key"</li>
+                <li class="fragment">It's a language for describing what you want to do to your text; think: "<span
+                    style="color:#17ff2e">c</span>hange <span style="color:#17ff2e">i</span>nside <span
+                    style="color:#17ff2e">t</span>ags", "<span style="color:#17ff2e">d</span>elete <span
+                    style="color:#17ff2e">3</span> <span style="color:#17ff2e">w</span>ords", "<span
+                    style="color:#17ff2e">d</span>elete <span style="color:#17ff2e">i</span>nside <span
+                    style="color:#17ff2e">{</span>", etc</li>
                 <li class="fragment">(IMO), less chance of breaking flow</li>
-                <li class="fragment">Learning a new "term" (new operator, new text object) dramatically increases
-                the "sentences" you can compose</li>
-                <li class="fragment">You can actually define your own motions/objects (e.g., ruby block) or operators (e.g.,
+                <li class="fragment">Learning a new "term" dramatically increases the "sentences" you can compose</li>
+                <li class="fragment">You can define your own motions/objects (e.g., ruby block) or operators (e.g.,
                 vim-surround)!</li>
             </ul>
         </section>
@@ -260,6 +266,7 @@
 
         <section>
             <h1>Thanks!</h1>
+            (<a href="https://github.com/alexkuang/vim-ll">https://github.com/alexkuang/vim-ll</a>)
         </section>
 			</div>
 
