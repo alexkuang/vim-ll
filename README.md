@@ -6,12 +6,13 @@ Still very much WIP, take it with a grain of salt.
 
 ### Running
 
-Run with `python -m SimpleHTTPServer`, and then hit up `localhost:8080` for the crazy reveal.js magic.
+Run with `python -m SimpleHTTPServer`, and then hit up `localhost:8000` for the crazy reveal.js magic.
 
 ### Demos
 
 It's really silly (and kind of futile) to give a live talk about vim and _not_ do any demos.  I'll try to make the demo
-files as free-standing as possible and annotate the keys I plan on using with `code backticks`, but no promises...
+files as free-standing as possible and annotate the keys I plan on using with `code backticks`, but no promises, since
+this _is_ a live presentation...  Nevertheless, all pertinent files will be in the demos folder in the project.
 
 ### Lunch 'n Learn?
 
