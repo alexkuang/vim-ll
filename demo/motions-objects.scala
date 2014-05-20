@@ -3,7 +3,7 @@
 //   - `hjkl`, tantamount to using the arrow keys.  You would have to do something like 40-41 presses of l--Or hold down the
 //     key.
 //   - `w`, wordwise movement, would get you there in ~9 keystrokes
-//   - `W`, WORDwise, in 8
+//   - `$bb`, end of line -> back 2 words, would get there in 3 (or 4, counting the shift)
 //   - `fd`, in 2.  :)
 //   - `tdl`, if you're feeling quirky...
 "The quick brown fox jumps over the lazy dog."
@@ -12,6 +12,5 @@
 //  - `viw`
 //  - `vi"`
 //  - `va"`
-//  - `vi(`
 //  - `vt,`
 println("The quick, brown fox jumps over the lazy dog")
