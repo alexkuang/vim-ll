@@ -152,9 +152,9 @@
             <h2>Motions and <span style="color:#17ff2e">Text Objects</span></h2>
             <p>Vim also has built-in objects for "words", "sentences", etc.  This allows for <em>precise selections</em>
                 <ul class="fragment">
-                    <li><code class="fragment highlight-green">iw</code> - "inside <span class="fragment highlight-blue">word</span>"</li>
-                    <li><code class="fragment highlight-green">i(</code> - (<span class="fragment highlight-blue">inside parentheses</span>)</li>
-                    <li><code class="fragment highlight-green">a(</code> - <span class="fragment highlight-blue">(around parentheses)</span></li>
+                    <li><code class="fragment highlight-green">iw</code> - "inner <span class="fragment highlight-blue">word</span>"</li>
+                    <li><code class="fragment highlight-green">i(</code> - (<span class="fragment highlight-blue">inner parentheses</span>)</li>
+                    <li><code class="fragment highlight-green">a(</code> - <span class="fragment highlight-blue">(a parentheses)</span></li>
                     <li>(other objects: sentences, paragraphs, {, etc...)</li>
                 </ul>
             </p>
@@ -165,7 +165,6 @@
             <h2>Combining everything</h2>
             <p class="fragment">Vim's killer feature is composing these efficient movements + selections with operators like
             delete/copy/etc, to create flexible + precise "commands" to run on your text.</p>
-            <p class="fragment">DRY--vim gives you the <code>.</code> command to repeat commands!</p>
             <p class="fragment">(cue demo - file: <code style="color:#ff2c2d">operator-motion-object.html</code>)</p>
         </section>
 
@@ -173,10 +172,10 @@
             <h2>Why this is life-changing</h2>
             <ul>
                 <li class="fragment">It's a language for describing what you want to do to your text; think: "<span
-                    style="color:#17ff2e">c</span>hange <span style="color:#17ff2e">i</span>nside <span
+                    style="color:#17ff2e">c</span>hange <span style="color:#17ff2e">i</span>nner <span
                     style="color:#17ff2e">t</span>ags", "<span style="color:#17ff2e">d</span>elete <span
                     style="color:#17ff2e">3</span> <span style="color:#17ff2e">w</span>ords", "<span
-                    style="color:#17ff2e">d</span>elete <span style="color:#17ff2e">i</span>nside <span
+                    style="color:#17ff2e">d</span>elete <span style="color:#17ff2e">i</span>nner <span
                     style="color:#17ff2e">{</span>", etc</li>
                 <li class="fragment">Efficiency in actions + more natural "way of thinking" = less chance of breaking flow (IMO)</li>
                 <li class="fragment">Each new operation/motion/text object dramatically increases the "commands" you
@@ -188,35 +187,35 @@
 
 
         <section>
-            <h1>Learning Vim</h1>
+            <h1>Adopting Vim</h1>
+        </section>
+
+        <section>
+            <h2>Adopting vim</h2>
+            <p class="fragment">Common wisdom: disable arrows in favor of <code>hjkl</code>, eschew use of the mouse,
+            etc... <span class="fragment">IMO only if you're really masochistic.</span></p>
+            <br><br>
+            <ul>
+                <li class="fragment">Which is to say...  Go vim or go home--Give it a real chance!</li>
+                <li class="fragment">Grab a sensible (but not HUGE) vimrc template (See <code>example_vimrc</code> in
+                project) to configure the editor.</li>
+                <li class="fragment">Get back to "pre-vim" productivity, then <strong>exceed it</strong>...  Shouldn't take long.
+                ;)</li>
+                <li class="fragment">How?</li>
+            </ul>
         </section>
 
         <section>
             <h2>Adopting vim</h2>
             <ul>
-                <li class="fragment">Go vim or go home--Give it a real chance!</li>
-                <li class="fragment">Grab a sensible (but not HUGE) vimrc template (See <code>example_vimrc</code> in
-                project) to configure the editor.</li>
-                <li class="fragment">vim's <code>:h</code>(elp) is awesome. You can look just about anything up:
-                <code>:h d</code>, <code>:h motion.txt</code>, <code>:h modes-intro</code>, etc.</li>
-            </ul>
-            <br><br>
-            <p class="fragment">Common wisdom: disable arrows in favor of <code>hjkl</code>, eschew use of the mouse,
-            etc... <span class="fragment">IMO only if you're really masochistic.</span> <span class="fragment">Get
-                back to "pre-vim" productivity, then <strong>exceed it</strong>...  Shouldn't take long.
-            ;)</span></p>
-        </section>
-
-        <section>
-            <h2>Improving</h2>
-            <ul>
-                <li class="fragment">One step at a time! Pick one thing, practice for a while, repeat.</li>
-                <li class="fragment">Rote memorization of keys is generally not productive.</li>
-                <li class="fragment">Way more effective: notice what requires a lot of repetitive keystrokes, and find
-                out how to make that faster.</li>
-                <li class="fragment">Don't just repeat long commands; break them down and learn about their components,
-                then reuse those components. ex: <code>ggVGy -&gt; gg, V, G, y</code></li>
-                <li class="fragment">But seriously, practice!  (See first bullet point)</li>
+                <li class="fragment">Learn the normal mode keystrokes.  <code>:help [key]</code> is super helpful here.</li>
+                <li class="fragment">... But one step at a time! Pick one thing, drill it into your muscle memory, repeat.</li>
+                <li class="fragment">Learn the vim motions + objects.  <code>:help motion.txt</code></li>
+                <li class="fragment">DRY: notice repetition, cut it out. ex: Use the built-in repeat commands:
+                <code>.</code>, <code>&amp;</code>, etc</li>
+                <li class="fragment">Don't rote memorize!  Break long, specific commands down to their components, then
+                learn + reuse those components. ex: <code>ggVGy -&gt; gg, V, G, y</code></li>
+                <li class="fragment">But seriously, practice!  (See second bullet point)</li>
             </ul>
         </section>
 
