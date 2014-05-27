@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Vim</title>
+		<title>Vim Crash Course</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -42,22 +42,74 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
         <section>
-            <h1>Vim: The Good Parts</h1>
+            <h1>vim</h1>
+            <h3>The crash course</h3>
         </section>
 
         <section>
-            <q>
-                Pretend you're a new programmer tasked with maintenance of a file on an old linux server.  You ssh in
-                and try editing the file with vim, since you've heard good things about it.  
-            </q>
-            <br>
-            <q class="fragment">
-                But when you attempt to
-                open the file, you discover that your key presses aren't inserting new letters, and CTRL-C won't exit
-                the application like normal.  What now?
-            </q>
+            <h2>Goal</h2>
+            <p>Change the way you think about text editing, and spread the gospel of vim.</p>
+            <p><small>(For the more experienced, maybe a fresh perspective / new fun fact?)</small></p>
+            <br><br>
+            <ul>
+                <li class="fragment">Show the power of "vanilla" vim--No crazy plugins, no "obscure tips"</li>
+                <li class="fragment">Explain the "vim way" and some core concepts</li>
+                <li class="fragment">Give a good foundation for further exploration</li>
+                <li class="fragment">Be interactive to cut down boredom</li>
+                <li class="fragment">Not a "gentle walk through vim"--Read a README on your own time.  :)</li>
+            </ul>
+        </section>
 
-            <span class="fragment">(cue demo - file: <code style="color:#ff2c2d"><code style="color:#ff2c2d">basics.py</code></code>)</span>
+        <section>
+            <h2>What is vim?</h2>
+            <ul>
+                <li><q>"That weird editor where you have to press i just to insert text."</q></li>
+                <li><q>"What you use while stuck ssh-ing into a server, but nano is for losers"</q></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Reasons to use vim</h2>
+            <ul>
+                <li class="fragment">It's not notepad.</li>
+                <li class="fragment">
+                    Less risk of RSI than emacs<super>*</super><br><img src="http://i.imgur.com/yM8aRp1.jpg">
+                    <br>
+                    <p class="fragment"><small>* I am not a doctor</small></p>
+                </li>
+                <li class="fragment">Cross-[language|workflow|platform]</li>
+                <li class="fragment">Look like a wizard in coffee shops</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Reasons to not use vim</h2>
+            <ul>
+                <li class="fragment">
+                    Not easily extensible<super>*</super><br>
+                    <p><small class="fragment">* Seriously though, vimscript sucks</small><br />
+                    <small class="fragment">* Good thing vim devs are very persistent--stubborn, even</small></p>
+                </li>
+                <li class="fragment">Not as useful to those OK with one IDE/tech stack/etc</li>
+                <li class="fragment">It's not notepad (or TextMate, or Eclipse...)</li>
+                <li class="fragment">HOWEVER, "vim-like" interfaces available for other apps...</li>
+            </ul>
+            <br />
+            <br />
+        </section>
+
+
+
+        <section>
+            <h1>Core vim concepts</h1>
+        </section>
+
+        <section>
+            <h2>Philosophy</h2>
+            <p class="fragment">Very much unix-inspired: Small <em><strong>composable</strong></em> units for <em><strong>specific tasks</strong></em>, and the
+                <em><strong>interface between them should be text</strong></em>.</p>
+            <br><br>
+            <p class="fragment">This is key to why vim is so awesome at text editing but so terrible at everything else.</p>
         </section>
 
         <section>
@@ -65,42 +117,23 @@
             <ul>
                 <li class="fragment">Yes, key functions change depending on mode</li>
                 <li class="fragment">Coders (or even just writers) don't spend all their time inserting text, why optimize solely for that?</li>
-                <li class="fragment">Lots of modes, but two "most basic" ones are probably:
+                <li class="fragment">4 pseudo- "mode groups" to know:
                   <ul>
                       <li class="fragment">Normal mode: Primary mode, operate on text.  Delete, cut, paste, indent, etc.
                       This is the mode you will be spending the most time in.</li>
-                      <li class="fragment">Insert mode: Self-explanatory, every other text editor's "normal"</li>
+                      <li class="fragment">Insert mode: Self-explanatory</li>
+                      <li class="fragment">Visual mode: Kind of like highlighting with the mouse</li>
+                      <li class="fragment">Ex mode: Like the command line.  <code>:w</code>, <code>:q</code>, <code>:s/foo/bar</code>, etc.</li>
                   </ul>
                 </li>
+                <li class="fragment">(cue demo - file: <code style="color:#ff2c2d"><code style="color:#ff2c2d">mode-basics.py</code></code>)</li>
             </ul>
         </section>
 
         <section>
-            <q>
-                After hitting google you now know how to drop into insert mode and out, type new text, and even copy +
-                paste in normal mode.  
-            </q>
-            <br>
-            <q class="fragment">
-                But you're still jamming on the arrow keys to get everywhere, and every thing just seems slow and
-                clunky.  Even with the mouse, this is basically just on par with Notepad.
-            </q>
-            <br>
-            <q class="fragment">
-                And why is there a normal mode anyway?  Why not just have key chords like every other text editor?
-            </q>
-        </section>
-
-        <section>
-            <h2>Motions and Text Objects</h2>
-            <p>In normal mode, vim has a glut of <strong><em>motions</em></strong> and <strong><em>text
-                    objects</em></strong> that let you tell it how to move the cursor and how to select text.</p>
-
-            <p class="fragment">One of the pieces of "common newbie wisdom" is to increase speed by using hjkl instead
-            of the arrows to move in normal mode.</p>
-
-            <p class="fragment">That helps a bit since you stay on home row, but hjkl is really for small
-            adjustments and should be your last resort.  Vim has way better mechanisms for movement.</p>
+            <h2>So what?</h2>
+            <p class="fragment">In normal mode, vim has a glut of <strong><em>motions</em></strong> and <strong><em>text objects</em></strong> that let you tell it what you want.</p>
+            <p class="fragment">This is makes playing "hold down arrow keys" and "hunt with mouse" <em>kind of a joke</em>.</p>
         </section>
 
         <section>
@@ -109,26 +142,30 @@
             <ul class="fragment">
                 <li><code class="fragment highlight-green">w</code> - forward to next word</li>
                 <li><code class="fragment highlight-green">e</code> - forward to end of word</li>
+                <li><code class="fragment highlight-green">0</code> - first character of line</li>
                 <li><code class="fragment highlight-green">fc</code> - forward to next occurrence of c</li>
-                <li><code class="fragment highlight-green">tc</code> - forward 'til (to character before) next occurence of c</li>
+                <li><code class="fragment highlight-green">tc</code> - forward 'til next occurence of c</li>
             </ul>
         </section>
 
         <section>
             <h2>Motions and <span style="color:#17ff2e">Text Objects</span></h2>
-            <p>The concept of "text objects" allows <em>precise selections</em>.  Particularly powerful are objects
-            involving the `i` and `a` modifiers:
+            <p>Vim also has built-in objects for "words", "sentences", etc.  This allows for <em>precise selections</em>
                 <ul class="fragment">
+                    <li><code class="fragment highlight-green">iw</code> - "inner <span class="fragment highlight-blue">word</span>"</li>
                     <li><code class="fragment highlight-green">i(</code> - (<span class="fragment highlight-blue">inner parentheses</span>)</li>
-                    <li><code class="fragment highlight-green">a(</code> - <span class="fragment highlight-blue">(a set of parentheses)</span></li>
-                    <li><code class="fragment highlight-green">i[</code> - [<span class="fragment highlight-blue">inner brackets</span>]</li>
-                    <li><code class="fragment highlight-green">a[</code> - <span class="fragment highlight-blue">[a brackets]</span></li>
-                    <li><code class="fragment highlight-green">it</code> - &lt;p&gt;<span class="fragment highlight-blue">inner tags</span>&lt;/p&gt;</li>
-                    <li><code class="fragment highlight-green">at</code> - <span class="fragment highlight-blue">&lt;p&gt;a set of tags&lt;/p&gt;</span></li>
+                    <li><code class="fragment highlight-green">a(</code> - <span class="fragment highlight-blue">(a parentheses)</span></li>
+                    <li>(other objects: sentences, paragraphs, {, etc...)</li>
                 </ul>
             </p>
-            <p class="fragment">Other objects exists as well: sentences, paragraphs, {, (etc)...</p>
             <p class="fragment">(cue demo - file: <code style="color:#ff2c2d">motions-objects.scala</code>)</p>
+        </section>
+
+        <section>
+            <h2>Combining everything</h2>
+            <p class="fragment">Vim's killer feature is composing these efficient movements + selections with operators like
+            delete/copy/etc, to create flexible + precise "commands" to run on your text.</p>
+            <p class="fragment">(cue demo - file: <code style="color:#ff2c2d">operator-motion-object.html</code>)</p>
         </section>
 
         <section>
@@ -139,8 +176,7 @@
                     style="color:#17ff2e">t</span>ags", "<span style="color:#17ff2e">d</span>elete <span
                     style="color:#17ff2e">3</span> <span style="color:#17ff2e">w</span>ords", "<span
                     style="color:#17ff2e">d</span>elete <span style="color:#17ff2e">i</span>nner <span
-                    style="color:#17ff2e">{</span>", etc, vs "hit backspace until it looks OK" or "fight with
-                smart-select on the mouse"</li>
+                    style="color:#17ff2e">{</span>", etc</li>
                 <li class="fragment">Efficiency in actions + more natural "way of thinking" = less chance of breaking flow (IMO)</li>
                 <li class="fragment">Each new operation/motion/text object dramatically increases the "commands" you
                 know since it's all composable!</li>
@@ -148,69 +184,23 @@
             </ul>
         </section>
 
-        <section>
-            <h1>BUT WAIT, THERE'S MORE!</h1>
-        </section>
-
-        <section>
-            <q>
-                Now vim seems a bit more useful.  You can issue "commands" to your text editor like <code>dit</code>
-                instead of repeatedly fiddling around with the mouse.  
-            </q>
-            <br>
-            <q class="fragment">
-                But still, hammering <code>dit</code> repeatedly while refactoring some code seems like kind of a drag,
-                and might even lead to the dreaded Repetitive Stress Injury.
-            </q>
-            <br>
-            <q class="fragment">
-                Enter the <code>.</code> (dot) command.
-            </q>
-            <p class="fragment">(cue demo - file: <code style="color:#ff2c2d">move-op-repeat.scala</code>)</p>
-        </section>
-
-        <section>
-            <h2>Move, Operate, Repeat</h2>
-            <p>
-                Common pattern in the usage in the dot command: move -&gt; operate -&gt; repeat.  The entirety of vim is
-                geared towards making this workflow easy.
-            </p>
-            <ol>
-                <li class="fragment">Move: Move to the text you want to edit (efficient motions)</li>
-                <li class="fragment">Operate: Make whatever changes you want (flexible operators composable with motions
-                + text objects)</li>
-                <li class="fragment">Repeat: Repeat that change easily (dot operator)</li>
-            </ol>
-            <br><br>
-            <p class="fragment">There are other repeat operators (ex: macros, see <code>:help @</code>), but the dot
-            operator alone gives HUGE bang for buck</p>
-        </section>
-
-        <section>
-            <h2>Recap</h2>
-            <p>THE takeaway for vim usage:</p>
-            <ol>
-                <li class="fragment">Efficient Movement: Use super fast motions instead of arrow keys / mouse fiddling!</li>
-                <li class="fragment">Precise Action: Compose operators with motions + text objects to do exactly what you want</li>
-                <li class="fragment">DRY: Vim provides a ton of ways to cut down on repetition</li>
-            </ol>
-        </section>
-
 
 
         <section>
-            <h1>What now?</h1>
+            <h1>Adopting Vim</h1>
         </section>
 
         <section>
             <h2>Adopting vim</h2>
+            <p class="fragment">Common wisdom: disable arrows in favor of <code>hjkl</code>, eschew use of the mouse,
+            etc... <span class="fragment">IMO only if you're really masochistic.</span></p>
+            <br><br>
             <ul>
-                <li class="fragment">Go vim or go home--Give it a real chance!</li>
-                <li class="fragment">Grab a sensible, but not HUGE, "modern" vimrc template (See
-                <code>example_vimrc</code> in project) to configure the editor; this can be expanded to your
-                preference.</li>
-                <li class="fragment">Get back to "pre-vim" productivity, then <strong>exceed it</strong>...  Shouldn't
-                take long.  ;)</li>
+                <li class="fragment">Which is to say...  Go vim or go home--Give it a real chance!</li>
+                <li class="fragment">Grab a sensible (but not HUGE) vimrc template (See <code>example_vimrc</code> in
+                project) to configure the editor.</li>
+                <li class="fragment">Get back to "pre-vim" productivity, then <strong>exceed it</strong>...  Shouldn't take long.
+                ;)</li>
                 <li class="fragment">How?</li>
             </ul>
         </section>
@@ -221,10 +211,10 @@
                 <li class="fragment">Learn the normal mode keystrokes.  <code>:help [key]</code> is super helpful here.</li>
                 <li class="fragment">... But one step at a time! Pick one thing, drill it into your muscle memory, repeat.</li>
                 <li class="fragment">Learn the vim motions + objects.  <code>:help motion.txt</code></li>
-                <li class="fragment">DRY: notice repetition, cut it out. Again, <code>.</code> is super important, but
-                there are others like <code>@@</code>, <code>&amp;</code>, etc</li>
-                <li class="fragment">Don't rote memorize!  Long, specific commands are just chained smaller components,
-                so learn + reuse those components. ex: <code>ggVGy -&gt; gg, V, G, y</code></li>
+                <li class="fragment">DRY: notice repetition, cut it out. ex: Use the built-in repeat commands:
+                <code>.</code>, <code>&amp;</code>, etc</li>
+                <li class="fragment">Don't rote memorize!  Break long, specific commands down to their components, then
+                learn + reuse those components. ex: <code>ggVGy -&gt; gg, V, G, y</code></li>
                 <li class="fragment">But seriously, practice!  (See second bullet point)</li>
             </ul>
         </section>
@@ -238,7 +228,7 @@
                 <li>emacs: evil mode - Oddly enough, best received of all...</li>
                 <li>sublime: vintage mode</li>
                 <li>eclipse: vrapper</li>
-                <li>bash: <code>set editing-mode vi</code> in <code>~/.inputrc</code>... or <code>set -o vi</code></li>
+                <li><code>set editing-mode vi</code> in <code>~/.inputrc</code>... or <code>set -o vi</code></li>
                 <li>Firefox: vimperator, pentadactyl</li>
             </ul>
         </section>
@@ -247,7 +237,7 @@
 
         <section>
             <h1>Misc Cool Demos</h1>
-            <h3>(Moving beyond stock vim)</h3>
+            <h3>(OK, so I lied...)</h3>
         </section>
 
         <section>
