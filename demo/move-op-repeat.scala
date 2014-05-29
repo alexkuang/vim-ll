@@ -10,9 +10,8 @@
 
 
 // Suppose you have a series of function calls, all of which took one parameter
-// which is a string.  You are refactoring the code, and decided that you can
-// decide the string based on some other data source, and no longer need it as a
-// parameter.
+// which is a string.  You are refactoring the code, and have decided that you
+// can and no longer need the string as a parameter.
 
 // One very quick way to do it would be:
 // `f(di(j.j.j.`
@@ -43,5 +42,5 @@ foo(l, m, n, o, p)
 //  - `A;<Esc>` => Append colon at the end of line, drop back to Normal mode
 //  - `j.` => move down, repeat last action
 val v1 = foo("bar 1")
-val v2 = foo("bar 2")
+val v2 = foo("bar 222237")
 val v3 = v1 + v2

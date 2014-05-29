@@ -2,9 +2,11 @@
 
 
 
-// Let's say you're trying to put your cursor onto the 'd' in dog.  There are
-// a few approaches to get your cursor there, starting from the
-// beginning of the line.
+// MOTIONS
+
+// Let's say you're trying to put your cursor onto the 'd' in dog to do some
+// editing.  There are a few approaches to get your cursor there, starting from
+// the beginning of the line.
 //   - `hjkl`, tantamount to using the arrow keys.  You would have to do
 //     something like 40-41 presses of l--Or hold down the key.
 //   - `w`, wordwise movement, would get you there in ~9 keystrokes
@@ -15,6 +17,8 @@
 "The quick brown fox jumps over the lazy dog."
 
 
+
+// TEXT OBJECTS
 
 // Suppose you have some span element in html, and you wish to change the inner
 // content to "bar button" instead of "foo span".  Instead of finicky
@@ -31,8 +35,8 @@
 
 
 
-// Modifiers also work across lines!  While inside the method body, `di{` will
-// empty out the entire method body.
+// This also works across lines!  While inside the method body, `di{` will empty
+// out the entire method body.
 def foo(): Int {
   val i = func1()
   val j = func2()
