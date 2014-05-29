@@ -25,3 +25,5 @@ syntax enable
 filetype on
 filetype indent on
 filetype plugin on
+
+" A bit more heavyweight, but also see https://github.com/tpope/vim-sensible
